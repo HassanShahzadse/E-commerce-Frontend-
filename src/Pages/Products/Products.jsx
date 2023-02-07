@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Card from "../../Component/Card/Card";
+import './Products.css'
 function Products() {
     const [item, setItem] = useState([]);
     useEffect(() => {
@@ -13,7 +14,7 @@ function Products() {
             })
     }, [])
     return (
-      <div className="App">
+      <div className="itemcard">
         {item.map((param,index)=>(
             <Card
             key={index}

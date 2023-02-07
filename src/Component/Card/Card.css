@@ -1,0 +1,22 @@
+.cardDiv{
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+
+}
+.image{
+    height: 200px;
+    width: 200px;
+}
+.products{
+    margin: 20px;
+    height: 500px;
+    width: 250px;
+    background-color: white;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+}
