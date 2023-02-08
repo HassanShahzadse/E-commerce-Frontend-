@@ -2,12 +2,22 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Card from "../../Component/Card/Card";
 import './Products.css'
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 function Products() {
+    let {id}= useParams();
     const [item, setItem] = useState([]);
     const[search,setSearch]=useState([]);
     useEffect(() => {
-        axios.get('https://fakestoreapi.com/products')
+        if(id){axios.get(`https://fakestoreapi.com/products/category/${id}`)
+        .then(
+            Response=>{
+                const res = Response.data
+                setItem(res);
+                setSearch(res);
+                
+            })}
+            else{
+                axios.get('https://fakestoreapi.com/products')
         .then(
             Response=>{
                 const res = Response.data
@@ -15,6 +25,8 @@ function Products() {
                 setSearch(res);
                 
             })
+            }
+        
     }, [])
     const handleSearch=(e)=>{
         const inputName=e.target.value;

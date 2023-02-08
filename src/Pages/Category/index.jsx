@@ -16,10 +16,8 @@ useEffect(() => {
 }, []);
     return(
         <>
-        <h1>Categories Page</h1>
-        {category.map((param,index)=>(
-        <li>{param}</li>))}
-        <Link to="/Home">Go back to Home</Link>
+        {category.map((p,index)=>(
+        <Link to={`/products/${p}`} key={index}>{p}</Link>))}
         </>
     )
 }
