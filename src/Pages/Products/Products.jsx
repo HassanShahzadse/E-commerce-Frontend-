@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Card from "../../Component/Card/Card";
 import './Products.css'
+import { Link } from "react-router-dom";
 function Products() {
     const [item, setItem] = useState([]);
     const[search,setSearch]=useState([]);
@@ -25,8 +26,10 @@ function Products() {
     return (
         <>
         <div>
+        
             <input type="text" placeholder="Search Item" onChange={handleSearch}/>
         </div>
+        <Link to="/home">Go back to Home</Link>
       <div className="itemcard">
         {search.map((param,index)=>(
             <Card
