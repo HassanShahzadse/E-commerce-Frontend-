@@ -16,8 +16,10 @@ useEffect(() => {
 }, []);
     return(
         <>
+        <h1>Select a Categories</h1><br></br><br></br>
         {category.map((p,index)=>(
-        <Link to={`/products/${p}`} key={index}>{p}</Link>))}
+            <li>
+        <Link to={`/products/${p}`} key={index}>{p}</Link></li>))}
         </>
     )
 }

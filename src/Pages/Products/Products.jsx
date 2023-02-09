@@ -6,7 +6,7 @@ import { Link, useParams } from "react-router-dom";
 function Products() {
     let {id}= useParams();
     const [item, setItem] = useState([]);
-    const[search,setSearch]=useState([]);
+    const[search,setSearch]= useState([]);
     useEffect(() => {
         if(id){axios.get(`https://fakestoreapi.com/products/category/${id}`)
         .then(
@@ -38,8 +38,12 @@ function Products() {
     return (
         <>
         <div>
-        
-            <input type="text" placeholder="Search Item" onChange={handleSearch}/>
+          <input type="text" placeholder="Search Item" onChange={handleSearch}/>
+        </div>
+        <div>
+            <button>Sort by Price(Asc)</button>
+            <button>Sort by Price(Des)</button>
+            <button>Sort by Name</button>
         </div>
         <Link to="/home">Go back to Home</Link>
       <div className="itemcard">
