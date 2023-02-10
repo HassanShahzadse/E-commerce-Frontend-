@@ -35,15 +35,33 @@ function Products() {
         })
         setSearch(searchName);
     }
+    const handleMinSort = () =>{
+        let sorted = [...item].sort((p1,p2)=>
+        p1.price > p2.price ? 1 : p1.price < p2.price ? -1 : 0
+        );
+        setSearch(sorted);
+    }
+    const handleMaxSort = () =>{
+        let sorted = [...item].sort((p1,p2)=>
+        p1.price < p2.price ? 1 : p1.price > p2.price ? -1 : 0
+        );
+        setSearch(sorted);
+    }
+    const handleNameSort = () =>{
+        let sorted = [...item].sort((p1,p2)=>
+        p1.title > p2.title ? 1 : p1.title < p2.title ? -1 : 0
+        );
+        setSearch(sorted);
+    }
     return (
         <>
         <div>
           <input type="text" placeholder="Search Item" onChange={handleSearch}/>
         </div>
         <div>
-            <button>Sort by Price(Asc)</button>
-            <button>Sort by Price(Des)</button>
-            <button>Sort by Name</button>
+            <button onClick={handleMinSort}>Sort by Price(Asc)</button>
+            <button onClick={handleMaxSort}>Sort by Price(Des)</button>
+            <button onClick={handleNameSort}>Sort by Name</button>
         </div>
         <Link to="/home">Go back to Home</Link>
       <div className="itemcard">

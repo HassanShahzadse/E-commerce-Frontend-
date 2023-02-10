@@ -10,8 +10,8 @@ const Card=(Props)=> {
           <Link to={`/productDetail/${Props.id}`}>{Props.title}</Link>
         <img src={Props.image} className="image"/>
         {/* <h4>{Props.title}</h4> */}
-        {/* <h4>${Props.price}</h4>
-        <p>{Props.category}</p> */}
+        <h4>${Props.price}</h4>
+        {/* <p>{Props.category}</p>  */}
         {/* <p>{Props.description}</p> */}
         </div>
       </div>
