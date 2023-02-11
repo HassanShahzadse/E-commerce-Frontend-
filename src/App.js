@@ -13,6 +13,7 @@ import UserDetails from "./Pages/UserDetails";
 function App() {
   return (
     <div className="App">
+   
       <Routes>
         <Route path="" element={<Navbar />}>
           <Route path="/home" element={<Home />} />
