@@ -9,6 +9,8 @@ import Navbar from "./Component/Navbar/Navbar";
 import Checkout from "./Pages/Checkout";
 import ItemConfirmation from "./Pages/item-confirmation";
 import UserDetails from "./Pages/UserDetails";
+import Signup from "./Pages/Signup";
+import Login from "./Pages/Login";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
             <Route path="userdetails" element={<UserDetails />} />
             <Route path="itemconfirmation" element={<ItemConfirmation />} />
           </Route>
+          <Route path="/signup" element={<Signup/>} />
+          <Route path="/login" element={<Login/>} />
         </Route>
       </Routes>
     </div>
