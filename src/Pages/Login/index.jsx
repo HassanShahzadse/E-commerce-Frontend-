@@ -6,7 +6,7 @@ const initialValues = {
   email: "",
   password: "",
 };
-
+ 
 const validationSchema = Yup.object({
   email: Yup.string().email("Invalid email").required("Required"),
 
@@ -24,7 +24,7 @@ const Login = () => {
     };
    
   return (
-    <div>
+    <div className="Login-form">
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -35,10 +35,10 @@ const Login = () => {
           <Field type="email" name="email" id="email" placeholder="Email" />
           <ErrorMessage name="email" />
 
-          <Field type="password" name="password" />
+          <Field type="password" name="password" placeholder="Password " />
           <ErrorMessage name="password" />
 
-          <button type="submit">submit</button>
+          <button type="submit" className="Login-button">Log In</button>
         </Form>
       </Formik>
     </div>
