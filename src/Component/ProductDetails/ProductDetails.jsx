@@ -2,9 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import './ProductDetails.css';
-import { ADD_TO_CART } from "../../redux/cart/cartType";
 import { useSelector, useDispatch } from "react-redux";
-import { ShoppinReducer } from "../../redux/cart/cartReducer";
 import { addToCart } from "../../redux/cart/cartAction";
 
 const ProductDetails = () => {
