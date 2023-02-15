@@ -1,6 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { REMOVE_FROM_CART } from "../../redux/cart/cartType";
 import './Checkout.css'
 import { removeFromCart } from "../../redux/cart/cartAction";
 const Checkout = ()=>{
