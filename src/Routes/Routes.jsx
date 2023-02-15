@@ -10,8 +10,10 @@ import ItemConfirmation from "../Pages/item-confirmation";
 import UserDetails from "../Pages/UserDetails";
 import Signup from "../Pages/Signup";
 import Login from "../Pages/Login"
+import PrivateRoutes from "./PrivateRoutes";
 const AppRoutes = () =>{
     const userLoggedIn = localStorage.getItem("token")
+    console.log(userLoggedIn)
     return(
 <Routes>
 <Route path="" element={<Navbar />}>
@@ -20,10 +22,15 @@ const AppRoutes = () =>{
   <Route path="/*" element={<ErrorPage />} />
   <Route path="/products/:id?" element={<Products />} />
   <Route path="/productDetail/:id?" element={<ProductDetails />} />
-  <Route path="/checkout" element={userLoggedIn ? <Checkout /> : <Navigate to="/Login"/>}>
+  {/* <Route path="/checkout" element={userLoggedIn ? <Checkout /> : <Navigate to="/Login"/>}>
     <Route path="userdetails" element={<UserDetails />} />
     <Route path="itemconfirmation" element={<ItemConfirmation />} />
-  </Route>
+  </Route> */}
+  <Route path="/Checkout">
+            <Route index={true} element={<PrivateRoutes><Checkout/> </PrivateRoutes> }></Route>
+            <Route path="users-detail-form" element={<PrivateRoutes><UserDetails/> </PrivateRoutes> }></Route>
+            <Route path="order-completed" element={<PrivateRoutes><ItemConfirmation/> </PrivateRoutes> }></Route>
+          </Route>
   <Route path="/signup" element={<Signup/>} />
   <Route path="/login" element={<Login/>} />
 </Route>

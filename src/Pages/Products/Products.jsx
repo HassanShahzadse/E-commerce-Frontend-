@@ -1,58 +1,59 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Card from "../../Component/Card/Card";
-import './Products.css'
+import "./Products.css";
 import { Link, useParams } from "react-router-dom";
+import { getAllProducts, getProductsByCategory } from "../../utils/Services/api";
+
 function Products() {
-    let {id}= useParams();
-    const [item, setItem] = useState([]);
-    const[search,setSearch]= useState([]);
-    useEffect(() => {
-        if(id){axios.get(`https://fakestoreapi.com/products/category/${id}`)
-        .then(
-            Response=>{
-                const res = Response.data
-                setItem(res);
-                setSearch(res);
-                
-            })}
-            else{
-                axios.get('https://fakestoreapi.com/products')
-        .then(
-            Response=>{
-                const res = Response.data
-                setItem(res);
-                setSearch(res);
-                
-            })
-            }
-        
-    }, [])
-    const handleSearch=(e)=>{
-        const inputName=e.target.value;
-        const searchName=item.filter((param)=>{
-            return param.title.toLowerCase().includes(inputName.toLowerCase());
-        })
-        setSearch(searchName);
+  let { id } = useParams();
+  const [item, setItem] = useState([]);
+  const [search, setSearch] = useState([]);
+
+  useEffect(() => {
+    if (id) {
+      getProductsByCategory(id).then((response) => {
+        const res = response.data;
+        setItem(res);
+        setSearch(res);
+      });
+    } else {
+      getAllProducts().then((response) => {
+        const res = response.data;
+        setItem(res);
+        setSearch(res);
+      });
     }
-    const handleMinSort = () =>{
-        let sorted = [...item].sort((p1,p2)=>
-        p1.price > p2.price ? 1 : p1.price < p2.price ? -1 : 0
-        );
-        setSearch(sorted);
-    }
-    const handleMaxSort = () =>{
-        let sorted = [...item].sort((p1,p2)=>
-        p1.price < p2.price ? 1 : p1.price > p2.price ? -1 : 0
-        );
-        setSearch(sorted);
-    }
-    const handleNameSort = () =>{
-        let sorted = [...item].sort((p1,p2)=>
-        p1.title > p2.title ? 1 : p1.title < p2.title ? -1 : 0
-        );
-        setSearch(sorted);
-    }
+  }, [id]);
+
+  const handleSearch = (e) => {
+    const inputName = e.target.value;
+    const searchName = item.filter((param) => {
+      return param.title.toLowerCase().includes(inputName.toLowerCase());
+    });
+    setSearch(searchName);
+  };
+
+  const handleMinSort = () => {
+    let sorted = [...item].sort((p1, p2) =>
+      p1.price > p2.price ? 1 : p1.price < p2.price ? -1 : 0
+    );
+    setSearch(sorted);
+  };
+
+  const handleMaxSort = () => {
+    let sorted = [...item].sort((p1, p2) =>
+      p1.price < p2.price ? 1 : p1.price > p2.price ? -1 : 0
+    );
+    setSearch(sorted);
+  };
+
+  const handleNameSort = () => {
+    let sorted = [...item].sort((p1, p2) =>
+      p1.title > p2.title ? 1 : p1.title < p2.title ? -1 : 0
+    );
+    setSearch(sorted);
+  };
+
     return (
         <>
         <div>
