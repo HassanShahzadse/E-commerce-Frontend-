@@ -22,6 +22,8 @@
 .cart-icon{
 color: black;
 font-size: 26px;
+display: flex;
+align-items: center;
 }
 .navtext{
     display: flex;

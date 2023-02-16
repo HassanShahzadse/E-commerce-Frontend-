@@ -20,6 +20,8 @@ const Navbar = ()=>{
         </div>
         <div className="cart-icon">
         <FontAwesomeIcon icon={faCartShopping} />
+        <ul className="navbarul">
+        <Link to={'/login'} className="navbarli"><li>LogIn</li></Link></ul>
     
         </div>
         

@@ -3,13 +3,25 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import './ProductDetails.css';
 import { useSelector, useDispatch } from "react-redux";
-import { addToCart } from "../../redux/cart/cartAction";
+import { addToCart,increaseQuantity,decreaseQuantity } from "../../redux/cart/cartAction";
+
 
 const ProductDetails = () => {
   const dispatch = useDispatch();
   const products = useSelector(state => state);
   console.log(products)
+  const [counts, setCount] = useState(0);
 
+  const handleIncrement = () => {
+    setCount((prevState) => prevState + 1);
+  };
+
+  const handleDecrement = () => {
+    if (counts === 0) {
+      return;
+    }
+    setCount((prevState) => prevState - 1);
+  };
 
   const { id } = useParams();
   const [productDetails, setProductDetails] = useState({});
@@ -30,8 +42,16 @@ const ProductDetails = () => {
       <h2>${productDetails.price}</h2>
       <h2>{productDetails.category}</h2>
       <p>{productDetails.description}</p>
+      <button onClick={handleIncrement}>+</button>
+      <h1>{counts}</h1>
+      <button onClick={handleDecrement}>-</button>
      <button onClick={()=>{
-        dispatch(addToCart(productDetails))}}>Add to Cart</button>
+        dispatch(addToCart({...productDetails,counts}))}}>Add to Cart</button>
+        {/* <button onClick={()=>{
+        dispatch(increaseQuantity(productDetails))}}>+</button>
+        <button onClick={()=>{
+        dispatch(decreaseQuantity(productDetails))}}>-</button> */}
+      
     </div>
   );
 };

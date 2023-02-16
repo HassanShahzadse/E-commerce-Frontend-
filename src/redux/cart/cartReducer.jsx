@@ -1,7 +1,7 @@
-import { ADD_TO_CART,REMOVE_FROM_CART } from "./cartType";
+import { ADD_TO_CART,REMOVE_FROM_CART,INCREASE_COUNTER,DECREASE_COUNTER } from "./cartType";
 const initialState = {
     products: [],
-    quantity: 0
+    quantity: [],
   };
   const ShoppinReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -9,17 +9,20 @@ const initialState = {
         const existingProductIndex = state.products.findIndex(
           product => product.id === action.payload.product.id
         );
+        // console.log(existingProductIndex)
+        // console.log("PRODUCT: ", action.payload.product.counts)
         if (existingProductIndex === -1) {
           // Add new product
           return {
             ...state,
-            quantity: state.quantity + 1,
-            products: [...state.products, action.payload.product]
+            products: [...state.products, action.payload.product],
+          
           };
         } else {
           // Update existing product
           const updatedProducts = [...state.products];
-          updatedProducts[existingProductIndex].quantity += 1;
+          updatedProducts[existingProductIndex].counts += action.payload.product.counts;
+         
           return {
             ...state,
             quantity: state.quantity + 1,
@@ -33,8 +36,32 @@ const initialState = {
         return {
           ...state,
           products: newProducts,
-          quantity: state.quantity - 1
         };
+        // case INCREASE_COUNTER:
+        //   {
+        //     // Update existing product
+        //     const updatedProducts = [...state.products];
+        //     updatedProducts[existingProductIndex].count += action.payload.product.count;
+           
+        //     return {
+        //       ...state,
+        //       quantity: state.quantity + 1,
+        //       products: updatedProducts
+        //     };
+        //   }
+        //   case DECREASE_COUNTER:
+        //     {
+        //       // Update existing product
+        //       const updatedProducts = [...state.products];
+        //       updatedProducts[existingProductIndex].count -= action.payload.product.count;
+             
+        //       return {
+        //         ...state,
+        //         quantity: state.quantity + 1,
+        //         products: updatedProducts
+        //       };
+        //     }
+        
       default:
         return state;
     }
