@@ -31,16 +31,23 @@ return(
               <tr key={product.id}>
                 <td>{product.title}</td>
                 <td><img src={product.image} alt="" className="details" /></td>
-                <td>{product.price * product.counts}</td>
+                <td>{product.price}</td>
                 <td>{product.counts}</td>
                 <td><button onClick={()=>{
                   dispatch(removeFromCart(product))}}>Remove from Cart</button></td>
                 <td>
-                  <Counter props={product.counts} onCountChange={(count)=>{
-                    setCount(count)
-                    product.counts = count;
-                    dispatch(addToCart(product))
-                  }}/>
+                  <Counter props={product.counts} 
+                  onCountChange={
+                    (count)=>{
+                      setCount(count)
+                      console.log(count)
+                      product.counts=count
+                      console.log(product.counts)
+                      console.log(product)
+                      dispatch(addToCart(product))
+                      
+                    }
+                  }/>
                 </td>
               </tr>
             ))}

@@ -1,9 +1,9 @@
 import axios from "axios";
 
 export const getProductsByCategory = (category) => {
-  return axios.get(`https://fakestoreapi.com/products/category/${category}`);
+  return axios.get(`http://localhost:5000/product/getProductByCategory?category=${category}`);
 };
 
 export const getAllProducts = () => {
-  return axios.get(`https://fakestoreapi.com/products`);
+  return axios.get(`http://localhost:5000/product/getProduct`);
 };

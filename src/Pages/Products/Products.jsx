@@ -64,7 +64,6 @@ function Products() {
             <button onClick={handleMaxSort}>Sort by Price(Des)</button>
             <button onClick={handleNameSort}>Sort by Name</button>
         </div>
-        <Link to="/home">Go back to Home</Link>
       <div className="itemcard">
         {search.map((param,index)=>(
             <Card

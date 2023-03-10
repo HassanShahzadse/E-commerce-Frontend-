@@ -14,12 +14,14 @@ const Navbar = ()=>{
             <ul className="navbarul">
         <li><Link to="/categories" className="navbarli">Categeries</Link></li>
         <li><Link to="/Products" className="navbarli">All Products</Link></li>
-        <li><Link to="/checkout" className="navbarli">Checkout</Link></li>
+        <li><Link to="/" className="navbarli">Home</Link></li>
         </ul>
         </div>
         </div>
         <div className="cart-icon">
+        <Link to="/checkout" className="navbarli">
         <FontAwesomeIcon icon={faCartShopping} />
+        </Link>
         <ul className="navbarul">
         <Link to={'/login'} className="navbarli"><li>LogIn</li></Link></ul>
     

@@ -7,12 +7,14 @@ const Card=(Props)=> {
         
       <div className="cardDiv">
         <div className="products">
-          <Link to={`/productDetail/${Props.id}`}>{Props.title}</Link>
         <img src={Props.image} className="image"/>
         {/* <h4>{Props.title}</h4> */}
-        <h4>${Props.price}</h4>
+        <div className="headingText">
+        <Link to={`/productDetail/${Props.id}`}>{Props.title}</Link>
+        </div>
         {/* <p>{Props.category}</p>  */}
-        {/* <p>{Props.description}</p> */}
+        <p>{Props.description}</p>
+        <h4>${Props.price}</h4>
         </div>
       </div>
     );
