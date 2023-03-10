@@ -17,7 +17,6 @@
 }
 input ,select{
     font-size: 22px;
-    margin-top: 20px;
     display: flex;
     justify-content: space-between;
     padding: 10px;

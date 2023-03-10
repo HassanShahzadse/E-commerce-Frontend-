@@ -56,14 +56,20 @@ function Products() {
 
     return (
         <>
-        <div>
-          <input type="text" placeholder="Search Item" onChange={handleSearch}/>
-        </div>
-        <div>
-            <button onClick={handleMinSort}>Sort by Price(Asc)</button>
-            <button onClick={handleMaxSort}>Sort by Price(Des)</button>
-            <button onClick={handleNameSort}>Sort by Name</button>
-        </div>
+<div className="SearchFilters">
+  <div className="SearchBar">
+    <input type="text" placeholder="Search Item" onChange={handleSearch}/>
+  </div>
+  <div className="Dropdown">
+    <button className="Dropbtn">Filters</button>
+    <div className="Dropdown-content">
+      <button onClick={handleMinSort}>Sort by Price(Asc)</button>
+      <button onClick={handleMaxSort}>Sort by Price(Des)</button>
+      <button onClick={handleNameSort}>Sort by Name</button>
+    </div>
+  </div>
+</div>
+
       <div className="itemcard">
         {search.map((param,index)=>(
             <Card
