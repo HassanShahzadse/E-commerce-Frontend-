@@ -12,16 +12,6 @@ const initialValues = {
   number: "",
   email: "",
 };
-// const onSubmit = (values) => {
-//   console.log('Form values:', values);
-//   const navigate = useNavigate();
-//   navigate('/home');
-// };
-// const onSubmit = values => {
-//   console.log("fafaaf", values);
-//   const history = useHistory();
-//   history.push("/home");
-// };
 const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 const validationSchema = Yup.object({
@@ -43,7 +33,7 @@ const UserDetails = () => {
  
   
   return (
-    <div>
+    <div className="user-details-container">
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -104,14 +94,11 @@ const UserDetails = () => {
           <Field type="email" name="email" id="email" placeholder="Email" />
           <ErrorMessage name="email" />
           <button type="submit">submit</button>
-          <button className="continueShoping">
-            <Link to="/home">Continue to Shopping </Link>
-          </button>
         </Form>
       </Formik>
       <div className="buttons">
         <p>
-          <Link to="../">Return to cart</Link>
+          <Link to="/Checkout">Return to cart</Link>
         </p>
       </div>
     </div>

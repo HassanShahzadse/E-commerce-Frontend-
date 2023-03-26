@@ -44,18 +44,16 @@ const Signup = () => {
   const auth = getAuth();
 
   return (
-    <div>
+    <div className="signup-container">
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={onSubmit}
       >
-        <Form className="userDetail">
+        <Form className="signup-details">
           <label htmlFor="email"></label>
           <Field type="email" name="email" id="email" placeholder="Email" />
           <ErrorMessage name="email" />
-          <Field type="password" name="password" />
-          <ErrorMessage name="password" />
           <div className="Double">
             <label htmlFor="firstname"></label>
             <Field
@@ -82,16 +80,15 @@ const Signup = () => {
             placeholder="03*********"
           />
           <ErrorMessage name="number" />
-
-          <Field type="password" name="passwordConfirmation" />
+          <Field type="password" name="password" placeholder="Enter Password"/>
+          <ErrorMessage name="password" />
+          <Field type="password" name="passwordConfirmation" placeholder="Confirm Password"/>
           <ErrorMessage name="passwordConfirmation" />
-          <button type="submit">submit</button>
-          <button type="submit">
-            <Link to="/home">Continue to Shopping </Link>
-          </button>
+          <button type="submit">Sign Up</button>
         </Form>
       </Formik>
     </div>
+  
   );
 };
 export default Signup;

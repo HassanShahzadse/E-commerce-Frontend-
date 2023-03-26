@@ -2,7 +2,12 @@ import { Link, Outlet } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import './navbar.css'
+import { SignOut } from "../../utils/Services/firebaseapi";
 const Navbar = ()=>{
+    const userLoggedIn = localStorage.getItem("token");
+    const handleSignout = () => {
+        SignOut();
+    };
     return(
         <>
         <div className="Navbar">
@@ -23,7 +28,17 @@ const Navbar = ()=>{
         <FontAwesomeIcon icon={faCartShopping} />
         </Link>
         <ul className="navbarul">
-        <Link to={'/login'} className="navbarli"><li>LogIn</li></Link></ul>
+        {!userLoggedIn ? (
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+          ) : (
+            <li>
+              <Link to="/" onClick={handleSignout}>
+                Logout
+              </Link>
+            </li>
+          )}</ul>
     
         </div>
         

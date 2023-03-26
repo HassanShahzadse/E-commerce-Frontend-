@@ -28,9 +28,9 @@ const ProductDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`https://fakestoreapi.com/products/${id}`)
+      .get(`http://localhost:5000/product/getProductById?id=${id}`)
       .then((Response) => {
-        setProductDetails(Response.data);
+        setProductDetails(...Response.data);
       });
   }, []);
 
