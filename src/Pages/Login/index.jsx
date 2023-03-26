@@ -1,11 +1,11 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-
+import { useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { signin } from "../../utils/Services/firebaseapi";
-import { useState } from "react";
 
 import * as Yup from "yup";
 import "./Login.css";
+import Signup from "../Signup";
 const initialValues = {
   email: "",
   password: "",
@@ -25,16 +25,10 @@ const Login = () => {
   const navigate = useNavigate();
 
   const onSubmit = (values) => {
-    // console.log("Values: ", values);
     signin(values,navigate, location);
     navigate("/");
   };
-  //FireBase Authentication
-  // const [email,setEmail]=useState('')
-  // const [password,setpassword]=useState('')
-
-  
-
+ 
   return (
     <div className="mainLogin">
     <div className="Login-form">
@@ -57,8 +51,15 @@ const Login = () => {
         
         </Form>
       </Formik>
-
+      <hr></hr>
+      <div className="Sign-up-container">
+        <h3>Dont have a Acount?</h3>
+      <Link to="/signup">
+            SignUp
+          </Link>
     </div>
+    </div>
+
     </div>
   );
 };

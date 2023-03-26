@@ -2,8 +2,10 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut
 } from "firebase/auth";
 import app from '../../firebase'
+const auth = getAuth();
 export const signin = (values,navigate,location) => {
   const auth = getAuth(app);
   signInWithEmailAndPassword(auth, values.email, values.password)
@@ -39,4 +41,17 @@ export const signup = (values,navigate) =>{
       alert(errorCode)
       // ..
     });
-}
+};
+export const SignOut = () => {
+  localStorage.clear();
+  signOut(auth)
+    .then(() => {
+      console.log("LOGOUT");
+
+      // Sign-out successful.
+    })
+    .catch((error) => {
+      // An error happened.
+    });
+  window.location.reload();
+};

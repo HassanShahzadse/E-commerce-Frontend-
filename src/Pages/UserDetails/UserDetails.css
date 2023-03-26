@@ -1,3 +1,11 @@
+.user-details-container{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
 .userDetail{
     width:50%;
     margin: auto;
@@ -5,9 +13,6 @@
     flex-direction: column;
     justify-content: left;
     padding: 0px 20px;
-
-    
-
 }
 .Double{
     display: flex;
@@ -20,7 +25,7 @@ input ,select{
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    
+    margin-bottom: 20px;
 
 }
 input:active{
@@ -40,9 +45,6 @@ input:active{
 }
 .buttons{
     width:50%;
-    margin: 20px auto;
-    display: flex;
-    justify-content: space-between;
     
 }
 .buttons p a {
