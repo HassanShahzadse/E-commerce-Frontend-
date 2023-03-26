@@ -36,6 +36,7 @@ const Login = () => {
   
 
   return (
+    <div className="mainLogin">
     <div className="Login-form">
       <Formik
         initialValues={initialValues}
@@ -57,6 +58,7 @@ const Login = () => {
         </Form>
       </Formik>
 
+    </div>
     </div>
   );
 };

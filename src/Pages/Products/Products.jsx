@@ -20,7 +20,7 @@ function Products() {
       getAllProducts().then((response) => {
         const res = response.data;
         setItem(res);
-        setSearch(res);
+         setSearch(res);
       });
     }
   }, [id]);
