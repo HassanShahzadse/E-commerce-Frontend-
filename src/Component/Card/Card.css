@@ -5,21 +5,19 @@
   border-radius: 5px;
   overflow: hidden;
 }
-.cardDiv:hover{
-  
+.cardDiv:hover {
   box-shadow: 0 12px 14px rgba(0, 0, 0, 0.1);
 }
 
 .products {
   padding: 10px;
 }
-.headingText a{
+.headingText a {
   text-decoration: none;
   color: black;
 }
 
 .headingText {
-  
   font-size: 1.2rem;
   font-weight: bold;
   margin: 0;
@@ -28,7 +26,6 @@
   text-overflow: ellipsis; /* display ... at the end */
   white-space: nowrap; /* prevent the text from wrapping */
   text-decoration: none;
-  
 }
 
 .products p {

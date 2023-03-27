@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import Card from "../../Component/Card/Card";
 import "./Products.css";
 import { Link, useParams } from "react-router-dom";
-import { getAllProducts, getProductsByCategory } from "../../utils/Services/api";
+import {
+  getAllProducts,
+  getProductsByCategory,
+} from "../../utils/Services/api";
 
 function Products() {
   let { id } = useParams();
@@ -20,7 +23,7 @@ function Products() {
       getAllProducts().then((response) => {
         const res = response.data;
         setItem(res);
-         setSearch(res);
+        setSearch(res);
       });
     }
   }, [id]);
@@ -54,25 +57,29 @@ function Products() {
     setSearch(sorted);
   };
 
-    return (
-        <>
-<div className="SearchFilters">
-  <div className="SearchBar">
-    <input type="text" placeholder="Search Item" onChange={handleSearch}/>
-  </div>
-  <div className="Dropdown">
-    <button className="Dropbtn">Filters</button>
-    <div className="Dropdown-content">
-      <button onClick={handleMinSort}>Sort by Price(Asc)</button>
-      <button onClick={handleMaxSort}>Sort by Price(Des)</button>
-      <button onClick={handleNameSort}>Sort by Name</button>
-    </div>
-  </div>
-</div>
+  return (
+    <>
+      <div className="SearchFilters">
+        <div className="SearchBar">
+          <input
+            type="text"
+            placeholder="Search Item"
+            onChange={handleSearch}
+          />
+        </div>
+        <div className="Dropdown">
+          <button className="Dropbtn">Filters</button>
+          <div className="Dropdown-content">
+            <button onClick={handleMinSort}>Sort by Price(Asc)</button>
+            <button onClick={handleMaxSort}>Sort by Price(Des)</button>
+            <button onClick={handleNameSort}>Sort by Name</button>
+          </div>
+        </div>
+      </div>
 
       <div className="itemcard">
-        {search.map((param,index)=>(
-            <Card
+        {search.map((param, index) => (
+          <Card
             key={index}
             id={param.id}
             price={param.price}
@@ -80,11 +87,11 @@ function Products() {
             image={param.image}
             category={param.category}
             description={param.description}
-            />
+          />
         ))}
       </div>
-      </>
-    );
-  }
-  
-  export default Products;
+    </>
+  );
+}
+
+export default Products;

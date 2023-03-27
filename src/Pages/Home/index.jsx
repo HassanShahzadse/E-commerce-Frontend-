@@ -69,45 +69,60 @@ const Home = () => {
       </div>
       <div className="categoriesSlider">
         <div className="categoriesCard">
-                <img src="https://chawkbazar.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fcategory%2Fwoman.jpg&w=128&q=75" alt="" />
-               <Link to="/products/women's%20clothing"><h1>women's clothing</h1></Link>
-                
-        </div>
-        <div className="categoriesCard">
-        <img src="https://chawkbazar.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fcategory%2Fman.jpg&w=128&q=75" alt="" />
-        <Link to="products/men's%20clothing"><h1>men's clothing</h1></Link>
-        </div>
-        <div className="categoriesCard">
-        <img src="https://chawkbazar.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fcategory%2Ftwo%2Fjewellers%2F1.png&w=384&q=75" alt="" />
-        <Link to="products/jewelery"><h1>jewelery</h1></Link>
-        </div>
-        <div className="categoriesCard">
-          
-        <img src="https://chawkbazar.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fcategory%2Fwatch.jpg&w=128&q=75" alt="" />
-        <Link to="products/electronics"><h1>electronics</h1></Link>
-        </div>
-      </div>
-      <div className="bestSeller">
-
-      </div>
-      <div className="bestSeller">
-      <h1>Best Sellers</h1>
-<div className="itemcard">
-
-        {search.slice(0,8).map((param, index) => (
-          <Card
-            key={index}
-            id={param.id}
-            price={param.price}
-            title={param.title}
-            image={param.image}
-            category={param.category}
-            description={param.description}
+          <img
+            src="https://chawkbazar.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fcategory%2Fwoman.jpg&w=128&q=75"
+            alt=""
           />
-        ))}
+          <Link to="/products/women's%20clothing">
+            <h1>women's clothing</h1>
+          </Link>
+        </div>
+        <div className="categoriesCard">
+          <img
+            src="https://chawkbazar.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fcategory%2Fman.jpg&w=128&q=75"
+            alt=""
+          />
+          <Link to="products/men's%20clothing">
+            <h1>men's clothing</h1>
+          </Link>
+        </div>
+        <div className="categoriesCard">
+          <img
+            src="https://chawkbazar.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fcategory%2Ftwo%2Fjewellers%2F1.png&w=384&q=75"
+            alt=""
+          />
+          <Link to="products/jewelery">
+            <h1>jewelery</h1>
+          </Link>
+        </div>
+        <div className="categoriesCard">
+          <img
+            src="https://chawkbazar.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fcategory%2Fwatch.jpg&w=128&q=75"
+            alt=""
+          />
+          <Link to="products/electronics">
+            <h1>electronics</h1>
+          </Link>
+        </div>
       </div>
+      <div className="bestSeller"></div>
+      <div className="bestSeller">
+        <h1>Best Sellers</h1>
+        <div className="itemcard">
+          {search.slice(0, 8).map((param, index) => (
+            <Card
+              key={index}
+              id={param.id}
+              price={param.price}
+              title={param.title}
+              image={param.image}
+              category={param.category}
+              description={param.description}
+            />
+          ))}
+        </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

@@ -1,6 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { Link  } from "react-router-dom";
-import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import "./UserDetails.css";
 const initialValues = {
@@ -26,12 +26,11 @@ const validationSchema = Yup.object({
 const UserDetails = () => {
   const navigate = useNavigate();
 
-  const onSubmit = values => {
+  const onSubmit = (values) => {
     console.log("Values: ", values);
     navigate("/home");
   };
- 
-  
+
   return (
     <div className="user-details-container">
       <Formik

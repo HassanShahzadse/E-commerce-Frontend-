@@ -38,7 +38,7 @@ const Signup = () => {
 
   const onSubmit = (values) => {
     console.log("Values: ", values);
-    signup(values,navigate);
+    signup(values, navigate);
     navigate("/login");
   };
   const auth = getAuth();
@@ -80,15 +80,18 @@ const Signup = () => {
             placeholder="03*********"
           />
           <ErrorMessage name="number" />
-          <Field type="password" name="password" placeholder="Enter Password"/>
+          <Field type="password" name="password" placeholder="Enter Password" />
           <ErrorMessage name="password" />
-          <Field type="password" name="passwordConfirmation" placeholder="Confirm Password"/>
+          <Field
+            type="password"
+            name="passwordConfirmation"
+            placeholder="Confirm Password"
+          />
           <ErrorMessage name="passwordConfirmation" />
           <button type="submit">Sign Up</button>
         </Form>
       </Formik>
     </div>
-  
   );
 };
 export default Signup;

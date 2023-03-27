@@ -1,20 +1,19 @@
-.signup-details{
-    display: flex;
-    align-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 50%;
-    
+.signup-details {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
 }
-.signup-container{
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
+.signup-container {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
-.signup-details input{
-    margin-bottom: 20px;
-    width: 90%;
+.signup-details input {
+  margin-bottom: 20px;
+  width: 90%;
 }

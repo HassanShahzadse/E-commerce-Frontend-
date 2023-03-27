@@ -1,48 +1,47 @@
 .SearchFilters {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .SearchBar {
-    margin-right: 10px;
-  }
-  
-  .Dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .Dropbtn {
-    background-color: #000000;
-    color: white;
-    padding: 20px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .Dropdown-content {
-    display: none;
-    position: absolute;
-    z-index: 1;
-  }
-  
-  .Dropdown-content button {
-    color: rgb(255, 255, 255);
-    padding: 10px;
-    text-decoration: none;
-    display: block;
-    background-color: rgb(0, 0, 0);
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .Dropdown:hover .Dropdown-content {
-    display: block;
-  }
-  
-  .Dropdown:hover .Dropbtn {
-    background-color: #000000;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SearchBar {
+  margin-right: 10px;
+}
+
+.Dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.Dropbtn {
+  background-color: #000000;
+  color: white;
+  padding: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.Dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.Dropdown-content button {
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  background-color: rgb(0, 0, 0);
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.Dropdown:hover .Dropdown-content {
+  display: block;
+}
+
+.Dropdown:hover .Dropbtn {
+  background-color: #000000;
+}

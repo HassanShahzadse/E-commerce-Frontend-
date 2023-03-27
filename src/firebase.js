@@ -10,9 +10,9 @@ const firebaseConfig = {
   projectId: "estore-auth",
   storageBucket: "estore-auth.appspot.com",
   messagingSenderId: "12458678622",
-  appId: "1:12458678622:web:0fd0127ef9ebe9504917cf"
+  appId: "1:12458678622:web:0fd0127ef9ebe9504917cf",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export default app
+export default app;

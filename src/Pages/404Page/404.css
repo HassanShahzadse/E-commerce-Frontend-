@@ -1,27 +1,26 @@
 h1 {
-    font-size: 48px;
-    font-weight: 600;
-    color: black;
-    margin: 0;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  a {
-    background-color: black;
-    color: white;
-    font-size: 24px;
-    font-weight: 600;
-    padding: 10px 20px;
-    border: none;
-    text-decoration: none;
-    cursor: pointer;
-    display: block;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-  
-  a:hover {
-    background-color: grey;
-  }
-  
+  font-size: 48px;
+  font-weight: 600;
+  color: black;
+  margin: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+a {
+  background-color: black;
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+a:hover {
+  background-color: grey;
+}

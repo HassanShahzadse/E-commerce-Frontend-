@@ -1,145 +1,141 @@
 .itemcard {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 0px 20px 0px 80px;
-  }
-  
-  .itemcard > * {
-    margin: 0;
-  }
-  
-  .itemcard .card {
-    background-color: white;
-    border: 1px solid gray;
-    padding: 20px;
-  }
-  
-  .itemcard .card:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .itemcard .card img {
-    max-width: 100%;
-    height: auto;
-  }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 0px 20px 0px 80px;
+}
+
+.itemcard > * {
+  margin: 0;
+}
+
+.itemcard .card {
+  background-color: white;
+  border: 1px solid gray;
+  padding: 20px;
+}
+
+.itemcard .card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.itemcard .card img {
+  max-width: 100%;
+  height: auto;
+}
+.carousel {
+  width: 95%;
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s ease;
+
+  height: 100%;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.categoriesCard a {
+  text-decoration: none;
+}
+
+.carousel-image.active {
+  opacity: 1;
+}
+
+.carousel-image:not(.active) {
+  opacity: 0;
+  position: absolute;
+}
+
+@media (max-width: 768px) {
   .carousel {
-    width: 95%;
-    height: 600px;
-    overflow: hidden;
-    position: relative;
-    margin: auto;
-    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.2);
+    height: 300px;
   }
-  
-  .carousel-container {
-    display: flex;
-    transition: transform 0.5s ease;
+}
+.categoriesSlider {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.categoriesCard {
+  display: flex;
+  padding: 10px 5px;
+  width: 300px;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f7f7f7;
+  box-sizing: border-box;
+  border: 0 solid #f9f9f9;
+  border-radius: 10px;
+}
+.categoriesCard img {
+  height: 80px;
+  border-radius: 50%;
+}
+.categoriesCard h1 {
+  font-size: 1rem;
+}
+.categoriesCard p {
+  font-size: 1rem;
+}
+.bestSeller h1 {
+  font-size: 40px;
+  font-weight: 400;
+  display: flex;
+  justify-content: start;
+  margin: 40px 80px;
+}
+.bestSeller {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  border-bottom: 1px solid #ececec; /* add top border */
+}
 
-    height: 100%;
-  }
-  
-  .carousel-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .categoriesCard a{
-    text-decoration: none;
-
-  }
-  
-  .carousel-image.active {
-    opacity: 1;
-  }
-  
-  .carousel-image:not(.active) {
-    opacity: 0;
-    position: absolute;
-  }
-  
-  @media (max-width: 768px) {
-    .carousel {
-      height: 300px;
-    }
-  }
-  .categoriesSlider{
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    margin-top: 20px;
-  }
-  .categoriesCard{
-    display: flex;
-    padding: 10px 5px;
-    width: 300px;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #f7f7f7;
-    box-sizing: border-box;
-    border: 0 solid #f9f9f9;
-    border-radius: 10px;
-  }
-  .categoriesCard img{
-    height: 80px;
-    border-radius: 50%;
-  }
-  .categoriesCard h1{
-    font-size: 1rem;
-
-  }
-  .categoriesCard p{
-    font-size: 1rem;
-
-  }
-  .bestSeller h1{
-    font-size: 40px;
-    font-weight: 400;
-    display: flex;
-    justify-content: start;
-    margin: 40px 80px;
-  }
-  .bestSeller{
-    display: flex;
-    justify-content: start;
-    flex-direction: column;
-    border-bottom: 1px solid #ececec; /* add top border */
-    
-  }
-  
-
-  /* For screen sizes smaller than 768px */
+/* For screen sizes smaller than 768px */
 @media (max-width: 768px) {
   .itemcard {
     grid-template-columns: repeat(1, 1fr);
     padding: 0px 10px;
     gap: 10px;
   }
-  
+
   .categoriesSlider {
     flex-wrap: wrap;
   }
-  
+
   .categoriesCard {
     width: 140px;
     margin-bottom: 10px;
     margin-right: 10px;
     padding: 5px;
   }
-  
+
   .categoriesCard img {
     height: 60px;
   }
-  
-  .categoriesCard h1, .categoriesCard p {
+
+  .categoriesCard h1,
+  .categoriesCard p {
     font-size: 0.8rem;
   }
-  
+
   .bestSeller h1 {
     font-size: 30px;
     margin: 40px 10px;
   }
-  .bestSeller{
+  .bestSeller {
     margin: auto;
   }
 }
@@ -151,7 +147,7 @@
     padding: 0px 10px;
     gap: 10px;
   }
-  
+
   .categoriesCard {
     width: 200px;
   }
@@ -164,7 +160,7 @@
     padding: 0px 20px 0px 80px;
     gap: 20px;
   }
-  
+
   .categoriesCard {
     width: 300px;
   }
