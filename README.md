@@ -34,4 +34,4 @@ The development server will start running on http://localhost:3000.
 - Express
 
 # Link for Backend
-- https://github.com/Knowledge-Streams-KS/e-commerce-backend-HassanShahzadse.git
+- https://https://github.com/HassanShahzadse/E-Commerce-Backend.git
