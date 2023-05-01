@@ -1,17 +1,19 @@
-
 import React from "react";
-function Card(Props) {
-   
-    return (
-        
-      <div className="cardDiv">
-        <h4>{Props.title}</h4>
-        <h4>{Props.price}</h4>
-        <h4>{Props.category}</h4>
-        <h4>{Props.description}</h4>
-        <img src={Props.image}/>
+import { Link } from "react-router-dom";
+import "./Card.css";
+const Card = (Props) => {
+  return (
+    <div className="cardDiv">
+      <div className="products">
+        <img src={Props.image} className="image" />
+        <div className="headingText">
+          <Link to={`/productDetail/${Props.id}`}>{Props.title}</Link>
+        </div>
+        <p>{Props.description}</p>
+        <h4>${Props.price}</h4>
       </div>
-    );
-  }
-  
-  export default Card;
+    </div>
+  );
+};
+
+export default Card;
